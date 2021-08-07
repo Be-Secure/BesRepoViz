@@ -6,12 +6,12 @@ Experimental Visualization for Bes Lighthouse...
 
 On Terminal
 
-``
+```sh
 git clone https://github.com/Be-Secure/BesRepoViz.git
 
 python -m http.server 8081
 
-``
+```
 
 On Browser 
 
