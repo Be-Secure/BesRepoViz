@@ -1,6 +1,6 @@
 # BesRepoViz
 
-Experimental Visualization for Bes Lighthouse...
+Experimental Visualization for BeS Lighthouse...
 
 # To try out..
 
