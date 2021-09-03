@@ -245,6 +245,7 @@
           <img src="./assets/svg/star.svg"/> <span><%- stargazers_count %></span>
           <img class="watchers" src="./assets/svg/eye.svg"/> <span><%- watchers_count %></span>
           <img class="forks" src="./assets/svg/fork.svg"/> <span><%- forks_count %></span>
+          <img class="forks" src="./assets/img/cveq.PNG"/> <span><%-  CVE %></span>
         </div>
 
         <div class="description"><%- description %></div>
@@ -256,6 +257,9 @@
           created: <span><%- moment(created_at).fromNow() %></span><br/>
           last push: <span><%- moment(pushed_at).fromNow() %></span><br/>
           last update: <span><%- moment(updated_at).fromNow() %></span>
+          <hr>
+          <h4>List of related CVE for the project. </h4>
+          <span><%- CVE_Details %></span></p>
         </div>
       </div>
       <div class="close">&times;</div>
