@@ -2038,6 +2038,8 @@ modelDataAvailable({
     "name": "farmOS",
     "full_name": "Be-Secure/farmOS",
     "private": false,
+    "cvedetails": {
+    },
     "owner": {
       "login": "Be-Secure",
       "id": 44028837,
