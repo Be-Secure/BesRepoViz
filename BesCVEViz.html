@@ -175,6 +175,10 @@
         width: 60%;
       }
 
+      #details .cvecount {
+        margin: 30px auto;
+        width: 60%;
+      }
       #details .close {
         position: absolute;
         top: 0;
@@ -257,6 +261,7 @@
           last push: <span><%- moment(pushed_at).fromNow() %></span><br/>
           last update: <span><%- moment(updated_at).fromNow() %></span>
         </div>
+        <div class="cvecount"> CVE Count : <%- cvecount %></div>
       </div>
       <div class="close">&times;</div>
     </script>
@@ -323,7 +328,6 @@
           <div class="filters">
             <label><input type="radio" name="weighting" value="watchers_count" checked> Watchers count</label>
             <label><input type="radio" name="weighting" value="forks_count"> Fork count</label>
-            <label><input type="radio" name="weighting" value="size"> Repository size</label>
             <label><input type="radio" name="weighting" value="size"> Repository size</label>
             <label><input type="radio" name="weighting" value="open_issues"> Open issues</label>
           </div>
@@ -915,6 +919,7 @@
           var $details = $("#details");
           var template = Template.make($("#details-template").get(0).innerHTML);
 
+          console.log("Template data:"+template);
           // When group selection changes, show the details panel
           foamtree.on("groupSelectionChanged", function (e) {
             if (e.groups.length > 0) {
@@ -963,6 +968,13 @@
                   item.updated_at_time = new Date(item.updated_at).getTime();
                   item.pushed_at_time = new Date(item.pushed_at).getTime();
 
+                  // TODO extract CVS Date 
+                  
+                  // TODO pull out CVE count 
+                  if (item.cvedetails) {
+                   item.cvecount =  Object.keys(item.cvedetails).length
+                  }              
+ 
                   // Create the FoamTree group object for this item
                   var group = {
                     // Keep a reference to the original item, we'll use it in our custom drawing code
