@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>GitHub search visualization</title>
+  <title>CVE visualization</title>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <meta property="og:image" content=""/> -->
 
@@ -175,6 +175,10 @@
         width: 60%;
       }
 
+      #details .cvecount {
+        margin: 30px auto;
+        width: 60%;
+      }
       #details .close {
         position: absolute;
         top: 0;
@@ -245,7 +249,6 @@
           <img src="./assets/svg/star.svg"/> <span><%- stargazers_count %></span>
           <img class="watchers" src="./assets/svg/eye.svg"/> <span><%- watchers_count %></span>
           <img class="forks" src="./assets/svg/fork.svg"/> <span><%- forks_count %></span>
-          <img class="forks" src="./assets/img/cveq.PNG"/> <span><%-  CVE %></span>
         </div>
 
         <div class="description"><%- description %></div>
@@ -257,10 +260,8 @@
           created: <span><%- moment(created_at).fromNow() %></span><br/>
           last push: <span><%- moment(pushed_at).fromNow() %></span><br/>
           last update: <span><%- moment(updated_at).fromNow() %></span>
-          <hr>
-          <h4>List of related CVE for the project. </h4>
-          <span><%- CVE_Details %></span></p>
         </div>
+        <div class="cvecount"> CVE Count : <%- cvecount %></div>
       </div>
       <div class="close">&times;</div>
     </script>
@@ -806,7 +807,7 @@
           "<div class='font'>Loading and preparing<br />the awesome...</div>");
         foamtreeLoader.started();
 
-        JSONP.load("./assets/data/be-secure-repos.js", "modelDataAvailable", setDataObject);
+        JSONP.load("./assets/data/be-secure-cves.js", "modelDataAvailable", setDataObject);
 
         /**
          * Initializes the search form.
@@ -835,6 +836,7 @@
               },
               success: function (data) {
                 // Once the data loads, show it in FoamTree
+               
                 setDataObject(data.data);
               }
             });
@@ -917,6 +919,7 @@
           var $details = $("#details");
           var template = Template.make($("#details-template").get(0).innerHTML);
 
+          console.log("Template data:"+template);
           // When group selection changes, show the details panel
           foamtree.on("groupSelectionChanged", function (e) {
             if (e.groups.length > 0) {
@@ -965,6 +968,13 @@
                   item.updated_at_time = new Date(item.updated_at).getTime();
                   item.pushed_at_time = new Date(item.pushed_at).getTime();
 
+                  // TODO extract CVS Date 
+                  
+                  // TODO pull out CVE count 
+                  if (item.cvedetails) {
+                   item.cvecount =  Object.keys(item.cvedetails).length
+                  }              
+ 
                   // Create the FoamTree group object for this item
                   var group = {
                     // Keep a reference to the original item, we'll use it in our custom drawing code

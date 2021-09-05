@@ -1,0 +1,50 @@
+{
+    "1": {
+      "CVE ID": "CVE-2021-29450",
+      "CWE ID": 200,
+      "# of Exploits": "",
+      "Vulnerability Type(s)": "+Info",
+      "Publish Date": "2021-04-15",
+      "Update Date": "2021-04-23",
+      "Score": 4,
+      "Gained Access Level": "None",
+      "Access": "Remote",
+      "Complexity": "Low",
+      "Authentication": "???",
+      "Conf.": "Partial",
+      "Integ.": "None",
+      "Avail.": "None"
+    },
+    "2": {
+      "CVE ID": "CVE-2021-29447",
+      "CWE ID": 611,
+      "# of Exploits": "",
+      "Vulnerability Type(s)": "",
+      "Publish Date": "2021-04-15",
+      "Update Date": "2021-06-15",
+      "Score": 4,
+      "Gained Access Level": "None",
+      "Access": "Remote",
+      "Complexity": "Low",
+      "Authentication": "???",
+      "Conf.": "Partial",
+      "Integ.": "None",
+      "Avail.": "None"
+    },
+    "3": {
+      "CVE ID": "CVE-2020-36326",
+      "CWE ID": 502,
+      "# of Exploits": "",
+      "Vulnerability Type(s)": "",
+      "Publish Date": "2021-04-28",
+      "Update Date": "2021-06-14",
+      "Score": 7.5,
+      "Gained Access Level": "None",
+      "Access": "Remote",
+      "Complexity": "Low",
+      "Authentication": "Not required",
+      "Conf.": "Partial",
+      "Integ.": "Partial",
+      "Avail.": "Partial"
+    }
+  }
