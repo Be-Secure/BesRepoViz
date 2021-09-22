@@ -259,7 +259,8 @@
         <div style="color: #888">
           created: <span><%- moment(created_at).fromNow() %></span><br/>
           last push: <span><%- moment(pushed_at).fromNow() %></span><br/>
-          last update: <span><%- moment(updated_at).fromNow() %></span>
+          last update: <span><%- moment(updated_at).fromNow() %></span><br />
+          <a target="_blank" href="<%- cve_link %>">More about CVE Details</a>
         </div>
         <div class="cvecount"> CVE Count : <%- cvecount %></div>
       </div>
