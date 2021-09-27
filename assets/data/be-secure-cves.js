@@ -1,5 +1,5 @@
 modelDataAvailable({
-    "total_count": 5,
+    "total_count": 7,
     "incomplete_results": false,
     "items":
 [
@@ -421,6 +421,7 @@ modelDataAvailable({
     "size": 630994,
     "stargazers_count": 0,
     "watchers_count": 0,
+    "cve_link" : "http://localhost:8081/magento.html",
     "language": null,
     "has_issues": false,
     "has_projects": true,
@@ -541,6 +542,7 @@ modelDataAvailable({
       "size": 632447,
       "stargazers_count": 9616,
       "watchers_count": 9616,
+      "cve_link" : "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       "language": "PHP",
       "has_issues": true,
       "has_projects": true,
@@ -641,6 +643,7 @@ modelDataAvailable({
       "size": 632447,
       "stargazers_count": 9616,
       "watchers_count": 9616,
+      "cve_link" : "http://localhost:8081/magento.html",
       "language": "PHP",
       "has_issues": true,
       "has_projects": true,
@@ -731,7 +734,7 @@ modelDataAvailable({
       "avatar_url": "https://avatars.githubusercontent.com/u/44028837?v=4",
       "gravatar_id": "",
       "url": "https://api.github.com/users/Be-Secure",
-      "html_url": "https://github.com/Be-Secure",
+      "html_url": "https://github.com/be-secure",
       "followers_url": "https://api.github.com/users/Be-Secure/followers",
       "following_url": "https://api.github.com/users/Be-Secure/following{/other_user}",
       "gists_url": "https://api.github.com/users/Be-Secure/gists{/gist_id}",
@@ -795,6 +798,7 @@ modelDataAvailable({
     "size": 302142,
     "stargazers_count": 0,
     "watchers_count": 0,
+    "cve_link" : "http://localhost:8081/CVEViz.html",
     "language": null,
     "has_issues": false,
     "has_projects": true,
@@ -915,6 +919,7 @@ modelDataAvailable({
       "size": 302142,
       "stargazers_count": 15401,
       "watchers_count": 15401,
+      "cve_link" : "https://www.cvedetails.com/product/4096/Wordpress-Wordpress.html?vendor_id=2337",
       "language": "PHP",
       "has_issues": false,
       "has_projects": false,
@@ -1015,6 +1020,7 @@ modelDataAvailable({
       "size": 302142,
       "stargazers_count": 15401,
       "watchers_count": 15401,
+      "cve_link" : "https://www.cvedetails.com/product/4096/Wordpress-Wordpress.html?vendor_id=2337",
       "language": "PHP",
       "has_issues": false,
       "has_projects": false,
@@ -1362,6 +1368,7 @@ modelDataAvailable({
     "size": 401207,
     "stargazers_count": 0,
     "watchers_count": 0,
+    "cve_link" : "http://localhost:8081/vscode.html",
     "language": null,
     "has_issues": false,
     "has_projects": true,
@@ -1486,6 +1493,7 @@ modelDataAvailable({
       "size": 401207,
       "stargazers_count": 120904,
       "watchers_count": 120904,
+      "cve_link" : "http://localhost:8081/magento.html",
       "language": "TypeScript",
       "has_issues": true,
       "has_projects": true,
@@ -1586,6 +1594,7 @@ modelDataAvailable({
       "size": 401207,
       "stargazers_count": 120904,
       "watchers_count": 120904,
+      "cve_link" : "https://github.com/be-secure",
       "language": "TypeScript",
       "has_issues": true,
       "has_projects": true,
@@ -1804,6 +1813,7 @@ modelDataAvailable({
     "size": 193888,
     "stargazers_count": 0,
     "watchers_count": 0,
+    "cve_link" : "http://localhost:8081/drupal.html",
     "language": null,
     "has_issues": false,
     "has_projects": true,
@@ -1918,6 +1928,7 @@ modelDataAvailable({
       "size": 193888,
       "stargazers_count": 3595,
       "watchers_count": 3595,
+      "cve_link" : "http://localhost:8081/drupal.html",
       "language": "PHP",
       "has_issues": false,
       "has_projects": false,
@@ -2012,6 +2023,7 @@ modelDataAvailable({
       "size": 193888,
       "stargazers_count": 3595,
       "watchers_count": 3595,
+      "cve_link" : "http://localhost:8081/drupal.html",
       "language": "PHP",
       "has_issues": false,
       "has_projects": false,
@@ -2040,6 +2052,8 @@ modelDataAvailable({
     "private": false,
     "cvedetails": {
     },
+    
+      
     "owner": {
       "login": "Be-Secure",
       "id": 44028837,
@@ -2111,6 +2125,7 @@ modelDataAvailable({
     "size": 4628,
     "stargazers_count": 0,
     "watchers_count": 0,
+    "cve_link" : "http://localhost:8081/farmOs.html",
     "language": "PHP",
     "has_issues": true,
     "has_projects": true,
@@ -2151,5 +2166,6 @@ modelDataAvailable({
     "network_count": 1,
     "subscribers_count": 1
   }
+
   ]
 });

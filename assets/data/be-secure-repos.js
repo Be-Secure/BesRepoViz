@@ -99,8 +99,6 @@ modelDataAvailable({
         "node_id": "MDc6TGljZW5zZTI="
       },
       "forks": 3,
-      "CVE" : 3,
-      "CVE_Details" :  ["CVE-2020-9283", "CVE-2020-5313", "CVE-2020-27291"],
       "open_issues": 6,
       "watchers": 4,
       "default_branch": "master",
@@ -200,8 +198,6 @@ modelDataAvailable({
       "open_issues_count": 0,
       "license": null,
       "forks": 0,
-      "CVE" : 3,
-      "CVE_Details" :  ["CVE-2020-56283", "CVE-2020-4613", "CVE-2020-13291"],
       "open_issues": 0,
       "watchers": 0,
       "default_branch": "master",
@@ -307,8 +303,6 @@ modelDataAvailable({
         "node_id": "MDc6TGljZW5zZTI="
       },
       "forks": 0,
-      "CVE" : 3,
-      "CVE_Details" :  ["CVE-2020-95283", "CVE-2020-316433", "CVE-2020-16579"],
       "open_issues": 0,
       "watchers": 0,
       "default_branch": "develop",
