@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>CVE visualization</title>
+  <title>GitHub search visualization</title>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <meta property="og:image" content=""/> -->
 
@@ -175,10 +175,6 @@
         width: 60%;
       }
 
-      #details .cvecount {
-        margin: 30px auto;
-        width: 60%;
-      }
       #details .close {
         position: absolute;
         top: 0;
@@ -259,39 +255,14 @@
         <div style="color: #888">
           created: <span><%- moment(created_at).fromNow() %></span><br/>
           last push: <span><%- moment(pushed_at).fromNow() %></span><br/>
-          last update: <span><%- moment(updated_at).fromNow() %></span><br />
-
-          <!-- <a target="_blank" href="<%- cve_link %>">More about CVE Details</a> <b> -->
-          <a href="<%- cve_link %>" onmouseover="previewUrl(this.href,'selectedTarget')">More about CVE Details</a>
+          last update: <span><%- moment(updated_at).fromNow() %></span>
         </div>
-        <div class="cvecount"> CVE Count : <%- cvecount %></div>
       </div>
       <div class="close">&times;</div>
     </script>
   <!-- jts -->
   <link rel="stylesheet" href="./assets/css/github.css">
   <!-- /jts -->
-
-  <!-- my script:start -->
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
-  <script type="text/javascript">
-     $(document).ready(function(){
-         $('#visualization').load('http://localhost:8081/magento.html');
-     });
-  </script>   
-  <!-- my script:end -->
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
-  <script type="text/javascript">
-  function previewUrl(url,target){
-     $(document).ready(function(){
-        //  $('#visualization').load('http://localhost:8081/magento.html');
-            $('#visualization').load(url);
-
-     });
-  //    window.alert("page for url", url);
-  }
-  </script>
-
 </head>
 
 <body>
@@ -831,7 +802,7 @@
           "<div class='font'>Loading and preparing<br />the awesome...</div>");
         foamtreeLoader.started();
 
-        JSONP.load("./assets/data/be-secure-cves.js", "modelDataAvailable", setDataObject);
+        JSONP.load("./assets/data/be-secure-repos.js", "modelDataAvailable", setDataObject);
 
         /**
          * Initializes the search form.
@@ -860,7 +831,6 @@
               },
               success: function (data) {
                 // Once the data loads, show it in FoamTree
-               
                 setDataObject(data.data);
               }
             });
@@ -943,7 +913,6 @@
           var $details = $("#details");
           var template = Template.make($("#details-template").get(0).innerHTML);
 
-          console.log("Template data:"+template);
           // When group selection changes, show the details panel
           foamtree.on("groupSelectionChanged", function (e) {
             if (e.groups.length > 0) {
@@ -992,13 +961,6 @@
                   item.updated_at_time = new Date(item.updated_at).getTime();
                   item.pushed_at_time = new Date(item.pushed_at).getTime();
 
-                  // TODO extract CVS Date 
-                  
-                  // TODO pull out CVE count 
-                  if (item.cvedetails) {
-                   item.cvecount =  Object.keys(item.cvedetails).length
-                  }              
- 
                   // Create the FoamTree group object for this item
                   var group = {
                     // Keep a reference to the original item, we'll use it in our custom drawing code
