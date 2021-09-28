@@ -260,7 +260,8 @@
           created: <span><%- moment(created_at).fromNow() %></span><br/>
           last push: <span><%- moment(pushed_at).fromNow() %></span><br/>
           last update: <span><%- moment(updated_at).fromNow() %></span><br />
-          <a target="_blank" href="<%- cve_link %>">More about CVE Details</a>
+          <!-- <a target="_blank" href="<%- cve_link %>">More about CVE Details</a> -->
+          <a href="<%- cve_link %>" onmouseover="previewUrl(this.href,'selectedTarget')"><button>More about CVE Details</button></a>
         </div>
         <div class="cvecount"> CVE Count : <%- cvecount %></div>
       </div>
@@ -269,6 +270,18 @@
   <!-- jts -->
   <link rel="stylesheet" href="./assets/css/github.css">
   <!-- /jts -->
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+  <script type="text/javascript">
+  function previewUrl(url,target){
+     $(document).ready(function(){
+            $('#visualization').load(url);
+
+     });
+  //    window.alert("page for url", url);
+  }
+  </script>
+ 
 </head>
 
 <body>
