@@ -266,8 +266,8 @@
           last push: <span><%- moment(pushed_at).fromNow() %></span><br/>
           last update: <span><%- moment(updated_at).fromNow() %></span><br />
           <!-- <a target="_blank" href="<%- cve_link %>">More about CVE Details</a> -->
-          <a href="<%- cve_link %>" onmouseover="previewUrl(this.href,'selectedTarget')"><button>More about CVE Details</button></a>
-          <!-- <button id="cve_button" onclick="load_data(<%- id %>,'<%- name %>')">Learn more</button> -->
+          <!-- <a href="<%- cve_link %>" onmouseover="previewUrl(this.href,'selectedTarget')"><button>More about CVE Details</button></a> -->
+          <button id="cve_button" onclick="load_data(<%- id %>,'<%- name %>')">Learn more</button>
         </div>
         <div class="cvecount"> CVE Count : <%- cvecount %></div>
       </div>
@@ -834,8 +834,8 @@
           "<div class='font'>Loading and preparing<br />the awesome...</div>");
         foamtreeLoader.started();
 
-        // JSONP.load("./assets/data/OSSP-master.js", "modelDataAvailable", setDataObject);
-        JSONP.load("./assets/data/be-secure-cves.js", "modelDataAvailable", setDataObject);
+        JSONP.load("./assets/data/OSSP-master.js", "modelDataAvailable", setDataObject);
+        // JSONP.load("./assets/data/be-secure-cves.js", "modelDataAvailable", setDataObject);
 
         /**
          * Initializes the search form.
