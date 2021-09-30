@@ -4,6 +4,7 @@
 
 <head>
   <title>CVE visualization</title>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <meta property="og:image" content=""/> -->
 
@@ -267,7 +268,7 @@
           last update: <span><%- moment(updated_at).fromNow() %></span><br />
           <!-- <a target="_blank" href="<%- cve_link %>">More about CVE Details</a> -->
           <a href="<%- cve_link %>" onmouseover="previewUrl(this.href,'selectedTarget')"><button>More about CVE Details</button></a>
-          <!-- <button id="cve_button" onclick="load_data(<%- id %>,'<%- name %>')">Learn more</button> -->
+          <!-- <button id="cve_button" onclick="load_data(<%- id %>,'<%- name %>')">Learn m ore</button> -->
         </div>
         <div class="cvecount"> CVE Count : <%- cvecount %></div>
       </div>
@@ -280,16 +281,15 @@
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
   <script type="text/javascript">
   function previewUrl(url,target){
+    // console.log(target);
      $(document).ready(function(){
-            $('#visualization').load(url);
-
+              //  $('#container').load(url)
+            $('#container').load(url + "#my_dataviz")
+            console.log(url + "#my_dataviz");
      });
   //    window.alert("page for url", url);
   }
-
-
   </script>
- 
 </head>
 
 <!------------------- BODY PART START FROM HERE  -------------------->
@@ -834,8 +834,8 @@
           "<div class='font'>Loading and preparing<br />the awesome...</div>");
         foamtreeLoader.started();
 
-        // JSONP.load("./assets/data/OSSP-master.js", "modelDataAvailable", setDataObject);
-        JSONP.load("./assets/data/be-secure-cves.js", "modelDataAvailable", setDataObject);
+        JSONP.load("./assets/data/OSSP-master.js", "modelDataAvailable", setDataObject);
+        // JSONP.load("./assets/data/be-secure-cves.js", "modelDataAvailable", setDataObject);
 
         /**
          * Initializes the search form.
