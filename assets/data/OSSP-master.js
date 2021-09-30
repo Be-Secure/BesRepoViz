@@ -19,7 +19,7 @@ modelDataAvailable({
         "clone_url": "https://github.com/magento/magento2.git",
         "html_url": "https://github.com/Be-Secure",
         "homepage": "http://www.magento.com",
-        "cve_link" : "http://localhost:8086/mockscreens/bargra.html",
+        "cve_link" : "http://localhost:8086/mockscreens/bargra2.html",
         "owner": {
             "login": "Be-Secure",
             "id": 44028837,

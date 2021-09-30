@@ -1,0 +1,21 @@
+
+[{
+    "yyy": "XSS",
+    "y": 56
+  }, {
+    "yyy": "Execute Code",
+    "y": 24
+
+  }, {
+    "yyy":"Gain previlage",
+    "y": 10
+  }, {
+    "yyy":"Sql Injection",
+    "y": 4
+  }, {
+    "yyy":"CSRF",
+    "y": 6
+  }, {
+    "yyy": "Directory traversal",        
+    "y": 8
+}]
