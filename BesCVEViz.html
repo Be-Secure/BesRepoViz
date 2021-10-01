@@ -5,6 +5,11 @@
 <head>
   <title>CVE visualization</title>
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <meta property="og:image" content=""/> -->
 
@@ -284,9 +289,10 @@
     // console.log(target);
      $(document).ready(function(){
               //  $('#container').load(url)
+            $('#container').load(url + "#my_dataviz2")
             $('#container').load(url + "#my_dataviz")
             $('#container').load(url + "#my_dataviz1")
-            $('#container').load(url + "#my_dataviz2")
+            
             console.log(url + "#my_dataviz");
      });
   //    window.alert("page for url", url);

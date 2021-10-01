@@ -1,21 +1,21 @@
 
 [{
-    "yyy": "XSS",
+    "name": "XSS",
     "y": 56
   }, {
-    "yyy": "Execute Code",
+    "name": "Execute Code",
     "y": 24
 
   }, {
-    "yyy":"Gain previlage",
+    "name":"Gain previlage",
     "y": 10
   }, {
-    "yyy":"Sql Injection",
+    "name":"Sql Injection",
     "y": 4
   }, {
-    "yyy":"CSRF",
+    "name":"CSRF",
     "y": 6
   }, {
-    "yyy": "Directory traversal",        
+    "name": "Directory traversal",        
     "y": 8
 }]

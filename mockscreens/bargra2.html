@@ -25,108 +25,100 @@
 	}
 
 	</style>
-
-</head>
-
-<body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>	
-<script src="https://d3js.org/d3.v3.min.js"></script>
-<div id="my_dataviz"></div>
-<div id="my_dataviz1"></div>
-<div id="my_dataviz2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div> 
-
-<script>
-
-var options = {
-       chart: {
-         renderTo: 'my_dataviz2',
-         type: 'pie',
-         options3d: {
-           enabled: true,
-           alpha: 15,
-           beta: 15,
-           depth: 50,
-           viewDistance: 25
-         }
-       },
-       title: {
-         text: 'Vulnerability Statistics',
-       },
-       subtitle: {
-         text: 'Vulnerabilities By Type',
-       },
-       xAxis: {
-         categories: []
-
-       },
-       yAxis: {
-         enabled: false,
-         title: {
-           text: 'Amount 2'
-         },
-         labels: {
-           //                            formatter:function() {
-           //                              return Highcharts.numberFormat(this.value, 0, '', ',');
-           //                            }
-           //                        ,enabled: false
-         },
-         plotLines: [{
-           value: 0,
-           width: 1,
-           color: '#808080'
-         }]
-       },
-       tooltip: {
-         formatter: function() {
-           return '<b>' + this.series.name + '</b><br/>' +
-            'Count :'  + Highcharts.numberFormat(this.y, 0, '', ',');
-         }
-       },
-       credits: {
-         enabled: false
-       },
-       plotOptions: {
-         pie: {
-           allowPointSelect: true,
-           cursor: 'pointer',
-           depth: 35,
-           dataLabels: {
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script>
+  var options = {
+         chart: {
+           renderTo: 'my_dataviz2',
+           type: 'pie',
+           options3d: {
              enabled: true,
-             format: '{point.name}'
+             alpha: 15,
+             beta: 15,
+             depth: 50,
+             viewDistance: 25
            }
-         }
-       },
-       legend: {
-         enabled: false
-       },
-
-       series: [
-            {   enabled:"false",
-                name:"",
-                type:"pie"
-            }
-        ]
-     }
-
-     setTimeout(function() {
-        $.getJSON("./mockscreens/pie.json", function(json) {
-                // console.log(json);
-                // alert(json);
-
-       options.series[0].data = json;
-       console.log(options)
-       chart = new Highcharts.Chart(options);
-            });
-
-     }, 0);
-
-// ========================================================================================
-// set the dimensions of the canvas
+         },
+         title: {
+           text: 'Vulnerability Statistics',
+         },
+         subtitle: {
+           text: 'Vulnerabilities By Type',
+         },
+         xAxis: {
+           categories: []
+  
+         },
+         yAxis: {
+           enabled: false,
+           title: {
+             text: 'Amount 2'
+           },
+           labels: {
+             //                            formatter:function() {
+             //                              return Highcharts.numberFormat(this.value, 0, '', ',');
+             //                            }
+             //                        ,enabled: false
+           },
+           plotLines: [{
+             value: 0,
+             width: 1,
+             color: '#808080'
+           }]
+         },
+         tooltip: {
+           formatter: function() {
+             return '<b>' + this.series.name + '</b><br/>' +
+              'Count :'  + Highcharts.numberFormat(this.y, 0, '', ',');
+           }
+         },
+         credits: {
+           enabled: false
+         },
+         plotOptions: {
+           pie: {
+             allowPointSelect: true,
+             cursor: 'pointer',
+             depth: 35,
+             dataLabels: {
+               enabled: true,
+               format: '{point.name}'
+             }
+           }
+         },
+         legend: {
+           enabled: false
+         },
+  
+         series: [
+              {   enabled:"false",
+                  name:"",
+                  type:"pie"
+              }
+          ]
+       }
+  
+       setTimeout(function() {
+  
+             $.getJSON("./mockscreens/pie.json", function(json) {
+                  // console.log(json);
+                  // alert(json);
+  
+         options.series[0].data = json;
+         console.log(options)
+         var chart=null;
+         chart = new Highcharts.Chart(options);
+              });
+  
+       }, 0);
+  </script>
+  <script>
 var margin = {top: 20, right: 20, bottom: 70, left: 40},
     width = 600 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
@@ -286,8 +278,104 @@ d3.json("./mockscreens/bar.json", function(error, data) {
 
 });
 
+  </script>
+</head>
 
-</script>
+<body>
+
+  <div id="my_dataviz2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+  <div id="my_dataviz"></div>
+  <div id="my_dataviz1"></div>
+     
+
+<!-- <script>
+
+var options = {
+       chart: {
+         renderTo: 'my_dataviz2',
+         type: 'pie',
+         options3d: {
+           enabled: true,
+           alpha: 15,
+           beta: 15,
+           depth: 50,
+           viewDistance: 25
+         }
+       },
+       title: {
+         text: 'Vulnerability Statistics',
+       },
+       subtitle: {
+         text: 'Vulnerabilities By Type',
+       },
+       xAxis: {
+         categories: []
+
+       },
+       yAxis: {
+         enabled: false,
+         title: {
+           text: 'Amount 2'
+         },
+         labels: {
+
+         },
+         plotLines: [{
+           value: 0,
+           width: 1,
+           color: '#808080'
+         }]
+       },
+       tooltip: {
+         formatter: function() {
+           return '<b>' + this.series.name + '</b><br/>' +
+            'Count :'  + Highcharts.numberFormat(this.y, 0, '', ',');
+         }
+       },
+       credits: {
+         enabled: false
+       },
+       plotOptions: {
+         pie: {
+           allowPointSelect: true,
+           cursor: 'pointer',
+           depth: 35,
+           dataLabels: {
+             enabled: true,
+             format: '{point.name}'
+           }
+         }
+       },
+       legend: {
+         enabled: false
+       },
+
+       series: [
+            {   enabled:"false",
+                name:"",
+                type:"pie"
+            }
+        ]
+     }
+
+     setTimeout(function() {
+        $.getJSON("./mockscreens/pie.json", function(json) {
+                // console.log(json);
+                // alert(json);
+
+       options.series[0].data = json;
+       console.log(options)
+       chart = new Highcharts.Chart(options);
+            });
+
+     }, 0);
+
+// ========================================================================================
+// set the dimensions of the canvas
+
+
+
+</script> -->
 
 </body>
 </html>
