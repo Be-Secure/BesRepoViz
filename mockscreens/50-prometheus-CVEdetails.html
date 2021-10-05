@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<!-- Placeholder line graph -->
+	<div class="container_line">
+		<h1>Vulnerability Trends Over Time</h1>
+		<div>
+			<canvas id="canvas"></canvas>
+		</div><br><br>
+		Warning : Vulnerabilities with publish dates before 1999 are not included in this table and chart. (Because there are not many of them and they make the page look bad; and they may not be actually published in those years.)
+	</div>
+
+<!-- Placeholder bar Diagram 1-->
+	<div class="container_bar1">
+		<div>
+			<canvas id="canvas_bar1"></canvas>
+		</div><br><br>	
+		Note: Vulnerabilities with  corresponding year.
+	</div>
+
+<!-- Placeholder bar Diagram 2-->
+<div class="container_bar2">
+	<div>
+		<canvas id="canvas_bar2"></canvas>
+	</div>
+	Note: Vulnerabilities with publish dates before 1999 are not included in this table and chart. (Because there are not many of them and they make the page look bad; and they may not be actually published in those years.)
+</div>
+
+
+<!-- Placeholder pie diagram -->
+	<div class="container_pie">
+		<div>
+			<canvas id="canvas_pie"></canvas>
+		</div>
+	</div>
+
+<!-- Placeholder pie diagram -->
+	<div class="table-responsive">
+		<h3>Vulnerability Trends Over Time</h3	>
+		<br>
+		<table class="table table-bordered table-striped" id="vulnerability_table">
+			<tr>
+				<th>
+					Year 
+				</th><th>
+					# of Vulnerabilities
+				</th><th>
+					DoS
+				</th>
+				<th>
+					Code Execution
+				</th><th>
+					Overflow
+				</th>
+				<th>
+					Memory Corruption
+				</th>
+				<th>
+					Sql Injection
+				</th>
+				<th>
+					XSS
+				</th>
+				<th>
+					Directory Traversal
+				</th>
+				<th>
+					Http Response Splitting
+				</th>
+				<th>
+					Bypass something
+				</th>
+				<th>
+					Gain Information
+				</th>
+				<th>
+					Gain Privileges
+				</th>
+				<th>
+					CSRF
+				</th>
+				<th>
+					File Inclusion
+				</th>
+				<th>
+					# of exploits
+				</th>
+			</tr>
+		</table>
+	</div>
+
+<script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+<script type="text/javascript" src="./js/line_graph.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!-- <script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap/js/bootstrap.min.js"></script> -->
+<script>
+	$(document).ready(function(){
+		$.getJSON("./sample_data.json", function(data){
+			console.log(data)
+			var vulnerability_data = 'deee';
+			console.log(vulnerability_data)
+			$.each(data.test_json, function(key, value){
+				console.log(value.Year)
+				vulnerability_data += '<tr>';
+				vulnerability_data += '<td>'+value.Year+'</td>';
+				vulnerability_data += '<td>'+value.No_of_Vulnerabilities+'</td>';
+				vulnerability_data += '<td>'+value.DoS+'</td>';
+				vulnerability_data += '<td>'+value.Code_Execution+'</td>';
+				vulnerability_data += '<td>'+value.Overflow+'</td>';
+				vulnerability_data += '<td>'+value.Memory_Corruption+'</td>';
+				vulnerability_data += '<td>'+value.Sql_Injection+'</td>';
+				vulnerability_data += '<td>'+value.XSS+'</td>';
+				vulnerability_data += '<td>'+value.Directory_Traversal+'</td>';
+				vulnerability_data += '<td>'+value.Http_Response_Splitting+'</td>';
+				vulnerability_data += '<td>'+value.Bypass_something+'</td>';
+				vulnerability_data += '<td>'+value.Gain_Information+'</td>';
+				vulnerability_data += '<td>'+value.Gain_Privileges+'</td>';
+				vulnerability_data += '<td>'+value.CSRF+'</td>';
+				vulnerability_data += '<td>'+value.File_Inclusion+'</td>';
+				vulnerability_data += '<td>'+value.No_of_exploits+'</td>';
+				vulnerability_data += '<tr>';
+			});
+			$('#vulnerability_table').append(vulnerability_data);
+		});
+	});
+</script>
+</body>
+</html>
