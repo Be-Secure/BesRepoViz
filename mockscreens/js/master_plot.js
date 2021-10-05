@@ -20,9 +20,8 @@
 // }
 
 
-
 var xmlhttp = new XMLHttpRequest();
-var url = "http://localhost:8086/sample_data.json"
+var url = "http://localhost:8086/mockscreens/sample_data.json"
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 xmlhttp.onreadystatechange =  function(){
@@ -128,7 +127,7 @@ var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: year,
-        theme: "light2", // "light1", "light2", "dark1", "dark2"
+        theme: "light2", 
         exportEnabled: true,
         animationEnabled: true,
         datasets: [{

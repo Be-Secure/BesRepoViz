@@ -97,39 +97,36 @@
 	</div>
 
 <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
-<script type="text/javascript" src="./js/line_graph.js"></script>
+<script type="text/javascript" src="./mockscreens/js/master_plot.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<!-- <script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap/js/bootstrap.min.js"></script> -->
 <script>
 	$(document).ready(function(){
-		$.getJSON("./sample_data.json", function(data){
-			console.log(data)
-			var vulnerability_data = 'deee';
-			console.log(vulnerability_data)
-			$.each(data.test_json, function(key, value){
-				console.log(value.Year)
-				vulnerability_data += '<tr>';
-				vulnerability_data += '<td>'+value.Year+'</td>';
-				vulnerability_data += '<td>'+value.No_of_Vulnerabilities+'</td>';
-				vulnerability_data += '<td>'+value.DoS+'</td>';
-				vulnerability_data += '<td>'+value.Code_Execution+'</td>';
-				vulnerability_data += '<td>'+value.Overflow+'</td>';
-				vulnerability_data += '<td>'+value.Memory_Corruption+'</td>';
-				vulnerability_data += '<td>'+value.Sql_Injection+'</td>';
-				vulnerability_data += '<td>'+value.XSS+'</td>';
-				vulnerability_data += '<td>'+value.Directory_Traversal+'</td>';
-				vulnerability_data += '<td>'+value.Http_Response_Splitting+'</td>';
-				vulnerability_data += '<td>'+value.Bypass_something+'</td>';
-				vulnerability_data += '<td>'+value.Gain_Information+'</td>';
-				vulnerability_data += '<td>'+value.Gain_Privileges+'</td>';
-				vulnerability_data += '<td>'+value.CSRF+'</td>';
-				vulnerability_data += '<td>'+value.File_Inclusion+'</td>';
-				vulnerability_data += '<td>'+value.No_of_exploits+'</td>';
-				vulnerability_data += '<tr>';
-			});
-			$('#vulnerability_table').append(vulnerability_data);
-		});
-	});
+    $.getJSON("./mockscreens/sample_data.json", function(data){
+		vulnerability_data = '';
+        $.each(data.test_json, function(key, value){
+            console.log(value.Year)
+            vulnerability_data += '<tr>';
+            vulnerability_data += '<td>'+value.Year+'</td>';
+            vulnerability_data += '<td>'+value.No_of_Vulnerabilities+'</td>';
+            vulnerability_data += '<td>'+value.DoS+'</td>';
+            vulnerability_data += '<td>'+value.Code_Execution+'</td>';
+            vulnerability_data += '<td>'+value.Overflow+'</td>';
+            vulnerability_data += '<td>'+value.Memory_Corruption+'</td>';
+            vulnerability_data += '<td>'+value.Sql_Injection+'</td>';
+            vulnerability_data += '<td>'+value.XSS+'</td>';
+            vulnerability_data += '<td>'+value.Directory_Traversal+'</td>';
+            vulnerability_data += '<td>'+value.Http_Response_Splitting+'</td>';
+            vulnerability_data += '<td>'+value.Bypass_something+'</td>';
+            vulnerability_data += '<td>'+value.Gain_Information+'</td>';
+            vulnerability_data += '<td>'+value.Gain_Privileges+'</td>';
+            vulnerability_data += '<td>'+value.CSRF+'</td>';
+            vulnerability_data += '<td>'+value.File_Inclusion+'</td>';
+            vulnerability_data += '<td>'+value.No_of_exploits+'</td>';
+            vulnerability_data += '<tr>';
+        });
+        $('#vulnerability_table').append(vulnerability_data);
+    });
+});
 </script>
 </body>
 </html>
