@@ -9,13 +9,13 @@ On Terminal
 ```sh
 git clone https://github.com/Be-Secure/BesRepoViz.git
 
-python -m http.server 8081
+python -m http.server 8086
 
 ```
 
 On Browser 
 
-http://127.0.0.1:8081/
+http://localhost:8086/BesCVEViz.html
 
  
 
