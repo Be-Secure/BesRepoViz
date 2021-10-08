@@ -1,0 +1,17 @@
+word = 
+[
+    
+    {
+        "id": 403007048,
+        "node_id": "MDEwOlJlcG9zaXRvcnk0MDMwMDcwNDg=",
+        "name": "wordpress",
+        "full_name": "Be-Secure/WordPress",
+        "private": false,
+        "cvecount": 3,
+        "cvedetails": {
+            "year": 2021,
+            "count": 3
+
+        }
+    }
+]

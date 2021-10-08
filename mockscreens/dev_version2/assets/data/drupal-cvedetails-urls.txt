@@ -1,0 +1,2 @@
+https://www.cvedetails.com/vulnerability-list/vendor_id-1367/product_id-2387/year-2021/Drupal-Drupal.html
+https://www.cvedetails.com/vulnerability-list/vendor_id-1367/product_id-2387/year-2020/Drupal-Drupal.html
