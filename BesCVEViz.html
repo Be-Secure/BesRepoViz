@@ -41,6 +41,21 @@
     margin-left: 200px;
     }
 
+    .piechart {
+      border-collapse: collapse;
+    /* padding: 0px 0px 0px 20px; */
+    font-size: 50px;
+    font-family: Arial,Helvetica;
+    /* padding-top: 50px; */
+    float: left;
+    align-content: center;
+    height: 500px;
+    width: 1000px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 200px;
+    }
+
     .cve_stats {
 
       border-collapse: collapse;
@@ -54,6 +69,22 @@
     white-space: nowrap;
 
     }
+
+  .home_btn {
+    height: 30px;
+     width: 50px;
+     float: right;
+     font-size: 8pt;
+     font-family: tahoma;
+     margin-top: 5px;
+     margin-right: 5px;
+     /* position:absolute; */
+     top:0;
+     right:0;
+     visibility: hidden;
+    
+  }
+    
   </style>
 
   <!-- The CSS for this demo -->
@@ -285,6 +316,20 @@
   <script type="text/javascript" src="./assets/js/jqplot/plugins/jqplot.enhancedLegendRenderer.min.js"></script>
   <script type="text/javascript" src="./assets/js/jqplot/plugins/jqplot.highlighter.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/plugins/jqplot.donutRenderer.js"></script>
+  <script src="./utility/bessearch.foamtree.js"></script>
+  <script src="./utility/bessearch.foamtree.util.loading.js"></script>
+  <script src="./utility/bessearch.foamtree.util.relaxationprogress.js"></script>
+
+  <!-- Include Hammer.js for mobile interactions -->
+  <script src="./assets/js/hammer.min.js"></script>
+
+  <!-- A number of utilities we'll need -->
+  <script src="./assets/js/bessearch.jsonp.js"></script>
+  <script src="./assets/js/bessearch.template.js"></script>
+  <!-- KEEP THIS COMMENTED TO AVOID ERROR -->
+  <!-- <script src="./assets/js/jquery-2.0.3.min.js"></script> -->
+  <script src="./assets/js/moment.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script type="text/javascript" src="./assets/js/run.js"></script>
 
   <!-- HTML template for the slide-in details panel -->
@@ -327,7 +372,7 @@
   </script>
   </script>
 
-  <script type="text/javascript" src="./assets/data/OSSP-master.json"></script>
+  
 
 
 
@@ -451,9 +496,11 @@
     </div>
   </div>
   <div id="cve_stats" style="align-content: center;">
+    <button id="home_button" onclick="refreshPage()" class="home_btn">Home</button>
     <h2 id="cve_header"></h2>
     <table id="table" border="1" class="cve_stats"></table>
-    <div id='vulntypeschart' class="barchart"></div>
+    <div id='vulntypeschart' class="piechart"></div>
+    <div id="vulnsbytypeandyearchart"></div>
     <div id="bar_chart_vuln_by_year" class="barchart"></div>
     <div id="bar_chart_vuln_by_type" class="barchart" style="padding-top: 30px;"></div>
   </div>
@@ -467,20 +514,7 @@
   <div id="details"></div>
 
   <!-- Include FoamTree visualization code and some utilities -->
-  <script src="./utility/bessearch.foamtree.js"></script>
-  <script src="./utility/bessearch.foamtree.util.loading.js"></script>
-  <script src="./utility/bessearch.foamtree.util.relaxationprogress.js"></script>
-
-  <!-- Include Hammer.js for mobile interactions -->
-  <script src="./assets/js/hammer.min.js"></script>
-
-  <!-- A number of utilities we'll need -->
-  <script src="./assets/js/bessearch.jsonp.js"></script>
-  <script src="./assets/js/bessearch.template.js"></script>
-  <!-- KEEP THIS COMMENTED TO AVOID ERROR -->
-  <!-- <script src="./assets/js/jquery-2.0.3.min.js"></script> -->
-  <script src="./assets/js/moment.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+ 
   <script>
     WebFont.load({
       google: {
