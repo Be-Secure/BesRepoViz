@@ -12,11 +12,24 @@ function enabledisable(count)
 
 
 function replace_div() {
-  console.log("replace");
+  // console.log("replace");
   // var div_data = "<div ><a href='XXX'>XXX</a></div>";
   jQuery('#content').replaceWith(jQuery('#cve_stats'));
   
 }
+
+function refreshPage(){
+  window.location.reload();
+} 
+
+function button_visibility()
+{
+  // console.log("inside visibility")
+  var x = document.getElementById('home_button');
+  x.style.visibility = 'visible';
+
+}
+
 
 function constructTable(selector, list) {
 	console.log("construct table container");
@@ -64,19 +77,7 @@ function Headers(list, selector) {
     return columns;
 }	
 
-function vulntypeschart_fetch_data(data)
-{
-  // var data_array = [];
-  for (var i in data) {
-    if (data[i].Year == "Total") {
-      var data_array = [
-        ["XSS",data[i].XSS],["Http Response Splitting",data[i].Http_Response_Splitting],["Code Execution",data[i].Code_Execution],["Sql Injection",data[i].Sql_Injection],["Gain Information",data[i].Gain_Information],["Denial of Service",data[i].DoS],["Directory Traversal",data[i].Directory_Traversal],["Bypass Something",data[i].Bypass_something],["CSRF",data[i].CSRF],["Gain Privilege",data[i].Gain_Privileges],["File Inclusion",data[i].File_Inclusion],];
-      
-    }
-  }
-  console.log("data_array[0]:"+data_array[0]);
-  return data_array;
-}
+
 var chart_vulntypeschart;
 function vulntypeschart(data){
   for (var i in data) {
@@ -110,6 +111,7 @@ function vulntypeschart(data){
 var chart_vulnsbytypeandyearchart;
 
 function vulnsbytypeandyearchart(data){
+  console.log("inside line chart");
   var vuln=[];
 	var vulntypesarray=['No_of_Vulnerabilities', 'XSS', 'Http_Response_Splitting', 'Code_Execution', 'Sql_Injection', 'Gain_Information', 'DoS', 'Directory_Traversal', 'Bypass_Something', 'CSRF', 'No_of_exploits', 'Gain_Privileges', 'File_Inclusion'];
 
@@ -175,8 +177,8 @@ function vulnsbytypeandyearchart(data){
     ],
   seriesDefaults: {
   },
-  series:[
-    {show:true, label:"No_of_Vulnerabilities"},{show:false, label:"XSS"},{show:false, label:"Http_Response_Splitting"},{show:true, label:"Code_Execution"},{show:false, label:"Sql_Injection"},{show:false, label:"Gain_Information"},{show:false, label:"DoS"},{show:false, label:"Directory_Traversal"},{show:false, label:"Bypass_Something"},{show:false, label:"CSRF"},{show:true, label:"No_of_exploits"},{show:false, label:"Gain_Privileges"},{show:false, label:"File_Inclusion"},		],
+  // series:[
+  //   {show:true, label:"No_of_Vulnerabilities"},{show:false, label:"XSS"},{show:false, label:"Http_Response_Splitting"},{show:true, label:"Code_Execution"},{show:false, label:"Sql_Injection"},{show:false, label:"Gain_Information"},{show:false, label:"DoS"},{show:false, label:"Directory_Traversal"},{show:false, label:"Bypass_Something"},{show:false, label:"CSRF"},{show:true, label:"No_of_exploits"},{show:false, label:"Gain_Privileges"},{show:false, label:"File_Inclusion"},		],
   title:{
     text: 'Vulnerabilities by type & year',
     fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
@@ -335,6 +337,19 @@ function bar_chart_by_type(data){
 
 
 }
+
+function closeSidebar()
+{
+  console.log("inside close side bar");
+  $('.details-template').addClass('hidden').animate({left:"-100%"},255);
+}
+
+function closePanel() {
+  // foamtree.set("selection", null);
+  console.log("inside close panel");
+  $("#details").toggleClass("showing", false);
+}
+
 function load_data(id,name)
 {
 
@@ -348,11 +363,14 @@ function load_data(id,name)
     console.log("inside load data");
     constructTable('#table', data);
     vulntypeschart(data);
-    // fetched_data = bar_chart_fetch_data(data);
+    // console.log(data.data[0].XSS);
+    // vulnsbytypeandyearchart(data);
     bar_chart_by_year(data);
     bar_chart_by_type(data);
-    // vulnsbytypeandyearchart1(data);
     replace_div();
+    closePanel();
+    button_visibility()
+    // closeSidebar();
   })
   .catch(function (err) {
     console.dir(err);
