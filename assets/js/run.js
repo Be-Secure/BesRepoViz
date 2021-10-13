@@ -87,7 +87,7 @@ function vulntypeschart(data){
       
   //   }
   // }
-    var data_array = [["XSS",data[data.length-2].XSS],["Http Response Splitting",data[data.length-2].Http_Response_Splitting],["Code Execution",data[data.length-2].Code_Execution],["Sql Injection",data[data.length-2].Sql_Injection],["Gain Information",data[data.length-2].Gain_Information],["Denial of Service",data[data.length-2].DoS],["Directory Traversal",data[data.length-2].Directory_Traversal],["Bypass Something",data[data.length-2].Bypass_something],["CSRF",data[data.length-2].CSRF],["Gain Privilege",data[data.length-2].Gain_Privileges],["File Inclusion",data[data.length-2].File_Inclusion],];
+    var data_array = [["XSS",data[data.length-2].XSS],["Http Response Splitting",data[data.length-2].Http_Response_Splitting],["Code Execution",data[data.length-2].Code_Execution],["Sql Injection",data[data.length-2].Sql_Injection],["Gain Information",data[data.length-2].Gain_Information],["Denial of Service",data[data.length-2].DoS],["Directory Traversal",data[data.length-2].Directory_Traversal],["Bypass Something",data[data.length-2].Bypass_something],["CSRF",data[data.length-2].CSRF],["Gain Privilege",data[data.length-2].Gain_Privileges],["File Inclusion",data[data.length-2].File_Inclusion],["Exploits",data[data.length-2].No_of_exploits]];
     console.log("data_array");
     console.log(data_array);    
     chart_vulntypeschart = jQuery.jqplot ("vulntypeschart", [data_array],
@@ -111,10 +111,10 @@ function vulntypeschart(data){
 			  location: 'e',
 			  placement: 'outsideGrid'
 		  },
-		  // seriesColors: [
-			//   '#999','#DB045B','#E04807',
-			//   '#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE','#DB843D', '#92A8CD', '#A47D7C', '#B5CA92','#FF9655','#24CBE5'
-		  // ]
+		  seriesColors: [
+			  '#999','#DB045B','#E04807',
+			  '#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE','#DB843D', '#92A8CD', '#A47D7C', '#B5CA92','#FF9655','#24CBE5'
+		  ]
 		}
 
 	  );
